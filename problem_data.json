@@ -1,0 +1,57 @@
+{
+  "tails": [
+    { "id": "A101", "fleet": "B737", "capacity": 180, "maintenance": null },
+    { "id": "B202", "fleet": "A320", "capacity": 150, "maintenance": null },
+    { "id": "C303", "fleet": "B737", "capacity": 175, "maintenance": null },
+    { "id": "D404", "fleet": "E190", "capacity": 100, "maintenance": null }
+  ],
+  "flights": [
+    {
+      "id": "F1",
+      "departure": { "day": 1, "time": "09:00" }, "arrival": { "day": 1, "time": "11:00" },
+      "fleet_req": "B737", "seats_req": 150
+    },
+    {
+      "id": "F2",
+      "departure": { "day": 1, "time": "11:30" }, "arrival": { "day": 1, "time": "13:30" },
+      "fleet_req": "B737", "seats_req": 150
+    },
+    {
+      "id": "F3",
+      "departure": { "day": 1, "time": "16:00" }, "arrival": { "day": 1, "time": "18:00" },
+      "fleet_req": "A320", "seats_req": 140
+    },
+    {
+      "id": "F4",
+      "departure": { "day": 1, "time": "19:00" }, "arrival": { "day": 1, "time": "21:00" },
+      "fleet_req": "E190", "seats_req": 90
+    },
+    {
+      "id":"F5",
+      "departure": { "day": 1, "time": "17:00" }, "arrival": { "day": 1, "time": "18:30" },
+      "fleet_req": "A320", "seats_req": 145
+    }
+  ],
+  "costs": {
+    "F1": { "A101": 100, "C303": 110 },
+    "F2": { "A101": 100, "C303": 110 },
+    "F3": { "B202": 90 },
+    "F4": { "D404": 70 },
+    "F5": { "B202": 95 }
+  },
+  "max_costs": {
+    "F1": 110,
+    "F2": 110,
+    "F3": 90,
+    "F4": 70,
+    "F5": 95
+  },
+  "impossible_pairings": [
+    ["F1", "F2"],
+    ["F3", "F5"]
+  ],
+  "tuning_parameters": {
+    "gamma": 5.0, "eta": 8.5, "lambda": 3.0,
+    "tau": 4.0, "varphi": 4.0, "psi": 0.3
+  }
+}
